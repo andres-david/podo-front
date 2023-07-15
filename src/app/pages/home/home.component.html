@@ -1,0 +1,77 @@
+<div class="container">
+
+  <div class="filters">
+
+    <div class="card flex justify-content-center">
+      <p-dropdown
+        [style]="{'minWidth':'100%'}"
+        [options]="coupons"
+        [(ngModel)]="selectedCoupon"
+        placeholder="Filtrar por Cupón"
+        optionLabel="cupon"
+        (onChange)="getContractsCoupon()"
+      ></p-dropdown>
+    </div>
+
+    <div class="card flex justify-content-center">
+      <p-dropdown
+        [style]="{'minWidth':'100%'}"
+        [options]="status"
+        [(ngModel)]="selectedStatus"
+        placeholder="Filtrar por Estado"
+        optionLabel="estado"
+        (onChange)="getContractsStatus()"
+      ></p-dropdown>
+    </div>
+
+    <div class="card flex justify-content-center">
+      <p-dropdown
+        [style]="{'minWidth':'100%'}"
+        [options]="origin"
+        [(ngModel)]="selectedOrigin"
+        placeholder="Filtrar por Origen"
+        optionLabel="origen"
+        (onChange)="getContractsOrigin()"
+      ></p-dropdown>
+    </div>
+
+    <div>
+      <p-button
+        label="Cargar Contratos"
+        (onClick)="getAllContracts()"
+      ></p-button>
+    </div>
+
+  </div>
+
+  <div class="tableContainer">
+
+    <div class="card table">
+      <p-table
+        [value]="contracts"
+        [scrollable]="true"
+        scrollHeight="320px"
+        [tableStyle]="{ 'min-width': '30rem' }"
+      >
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>Id</th>
+                  <th>Origen</th>
+                  <th>Estado</th>
+                  <th>Cupón</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-contract>
+              <tr>
+                  <td>{{ contract.id }}</td>
+                  <td>{{ contract.origen }}</td>
+                  <td>{{ contract.estado }}</td>
+                  <td>{{ contract.cupon }}</td>
+              </tr>
+          </ng-template>
+      </p-table>
+  </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,10 @@
+header{
+  margin: 0px;
+  padding: 5px 20px;
+  height: 70px;
+  border-bottom: 2px solid #ddd;
+}
+
+.logo{
+  height: 100%;
+}

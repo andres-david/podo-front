@@ -1,0 +1,15 @@
+footer{
+  box-sizing: border-box;
+  margin-top: auto;
+  height: 40px;
+  line-height: 40px;
+  /* padding-top: 30px; */
+  background-color: #343434;
+}
+
+footer p {
+  margin: 0px;
+  text-align: center;
+  /* margin-top: 10px; */
+  color: #fff;
+}
