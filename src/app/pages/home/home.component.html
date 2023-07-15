@@ -48,17 +48,17 @@
 
     <div class="card table">
       <p-table
-        [value]="contracts"
+        [value]="contracts | orderContracts: optionSort.property: optionSort.order"
         [scrollable]="true"
         scrollHeight="320px"
         [tableStyle]="{ 'min-width': '30rem' }"
       >
           <ng-template pTemplate="header">
               <tr>
-                  <th>Id</th>
-                  <th>Origen</th>
-                  <th>Estado</th>
-                  <th>Cupón</th>
+                  <th class="order" (click)="changeSort('id')">Id</th>
+                  <th class="order" (click)="changeSort('origen')">Origen</th>
+                  <th class="order" (click)="changeSort('estado')">Estado</th>
+                  <th class="order" (click)="changeSort('cupon')">Cupón</th>
               </tr>
           </ng-template>
           <ng-template pTemplate="body" let-contract>

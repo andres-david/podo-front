@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   public origin: any;
   public selectedOrigin: any;
 
+  public optionSort: {property: string | null, order: string} = {property: null, order: 'asc'};
+
   constructor(
     private apiService: ApiService
   ){}
@@ -87,6 +89,14 @@ export class HomeComponent implements OnInit {
         this.selectedStatus = '';
       })
 
+  }
+
+  changeSort(property: string) {
+    const {order} = this.optionSort;
+    this.optionSort = {
+      property: property,
+      order: order === 'asc' ? 'desc' : 'asc'
+    }
   }
 
 }
