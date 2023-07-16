@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
 
     this.apiService.getCouponsList()
       .subscribe((res: any[]) => {
-        console.log(res);
         this.coupons = res;
       })
 
